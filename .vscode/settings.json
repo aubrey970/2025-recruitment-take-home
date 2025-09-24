@@ -1,5 +1,6 @@
 {
   "files.associations": {
     "*.f7": "html"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
