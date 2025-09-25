@@ -1,6 +1,7 @@
 import EventService from "../../../services/eventService";
-// import Helper from "../../../utils/helper";
-// import store from "../../../js/store"; //framewor7 state management
+import Helper from "../../../utils/helper";
+//import store from "../../../js/store"; //framewor7 state management
+import LoginUserUseCase from "../usecases/logUserIn";
 
 /**
  * Controller class responsible for managing the Welcome page and its interactions.
@@ -88,10 +89,11 @@ export default class HomeController {
      * @throws {Error} Throws an error if the login process fails.
      */
     async loginUserToAccount() {
-        // const userId = new Helper().readAndClearField("login-user-id");
-        // const password = new Helper().readAndClearField("login-password");
-        // new Helper().readAndClearField("login-password-visible");
-        // await new LoginUserUseCase(this.app).execute(userId, password);
+        const userId = await new Helper().readAndClearField("login-user-id");
+        const password = await new Helper().readAndClearField("login-password");
+
+        //const isPasswordVisible = new Helper().readAndClearField("login-password-visible");
+        await new LoginUserUseCase(this.app).execute(userId, password);
         //clear data inputs
     }
 
@@ -118,7 +120,7 @@ export default class HomeController {
      * Displays the login screen.
      */
     showLoginScreen() {
-        this.app.loginScreen.open("#login-screen", false);
+        this.app.loginScreen.open("#login-screen", true);
     }
 
     /**

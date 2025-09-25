@@ -61,7 +61,8 @@ export default class RestAPIService {
             }
 
             return await this.endpointRepository.payloadToData(
-                this.responsePayload
+                this.responsePayload,
+                this.response
             );
         } catch (e) {
             clearTimeout(timeoutId);
@@ -112,7 +113,8 @@ export default class RestAPIService {
             }
 
             return await this.endpointRepository.payloadToData(
-                this.responsePayload
+                this.responsePayload,
+                this.response
             );
         } catch (e) {
             clearTimeout(timeoutId);

@@ -1,126 +1,102 @@
 {
-	"info": {
-		"_postman_id": "8a9c0407-8e1b-4cca-aa84-a97897ff9378",
-		"name": "2025 Technical assessment",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21644254"
-	},
-	"item": [
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"definition\": \"login\",\n    \"data\": {\n        \"email\": \"string\",\n        \"password\": \"string\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
-					"protocol": "https",
-					"host": [
-						"us-central1-portal-tps",
-						"cloudfunctions",
-						"net"
-					],
-					"path": [
-						"portal-controller"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"definition\": \"createUser\",\n    \"data\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"account\": \"string\", //e.g 8 digit number or PrepaidPlus\n        \"createdby\": \"string\",\n        \"group\": \"string\", // PrepaidPlus or any\n        \"password\": \"string\",\n        \"role\": \"string\", // Administrator or Supervisor\n        \"userType\": \"string\", // Merchant or PrepaidPlus\n        \"currentUserUid\": \"string\" //sent back on login\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
-					"protocol": "https",
-					"host": [
-						"us-central1-portal-tps",
-						"cloudfunctions",
-						"net"
-					],
-					"path": [
-						"portal-controller"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Users",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"definition\": \"listUsers\",\n    \"data\": {\n        \"currentUserUid\": \"string\",\n        \"startAfter\": \"string\",\n        \"limit\": \"number\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
-					"protocol": "https",
-					"host": [
-						"us-central1-portal-tps",
-						"cloudfunctions",
-						"net"
-					],
-					"path": [
-						"portal-controller"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset Password",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"definition\": \"resetPassword\",\n    \"data\": {\n       \"email\": \"string\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
-					"protocol": "https",
-					"host": [
-						"us-central1-portal-tps",
-						"cloudfunctions",
-						"net"
-					],
-					"path": [
-						"portal-controller"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "8a9c0407-8e1b-4cca-aa84-a97897ff9378",
+        "name": "2025 Technical assessment",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "21644254"
+    },
+    "item": [
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"definition\": \"login\",\n    \"data\": {\n        \"email\": \"string\",\n        \"password\": \"string\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
+                    "protocol": "https",
+                    "host": ["us-central1-portal-tps", "cloudfunctions", "net"],
+                    "path": ["portal-controller"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create User",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"definition\": \"createUser\",\n    \"data\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"account\": \"string\", //e.g 8 digit number or PrepaidPlus\n        \"createdby\": \"string\",\n        \"group\": \"string\", // PrepaidPlus or any\n        \"password\": \"string\",\n        \"role\": \"string\", // Administrator or Supervisor\n        \"userType\": \"string\", // Merchant or PrepaidPlus\n        \"currentUserUid\": \"string\" //sent back on login\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
+                    "protocol": "https",
+                    "host": ["us-central1-portal-tps", "cloudfunctions", "net"],
+                    "path": ["portal-controller"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "List Users",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"definition\": \"listUsers\",\n    \"data\": {\n        \"currentUserUid\": \"string\",\n        \"startAfter\": \"string\",\n        \"limit\": \"number\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
+                    "protocol": "https",
+                    "host": ["us-central1-portal-tps", "cloudfunctions", "net"],
+                    "path": ["portal-controller"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Reset Password",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"definition\": \"resetPassword\",\n    \"data\": {\n       \"email\": \"string\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://us-central1-portal-tps.cloudfunctions.net/portal-controller",
+                    "protocol": "https",
+                    "host": ["us-central1-portal-tps", "cloudfunctions", "net"],
+                    "path": ["portal-controller"]
+                }
+            },
+            "response": []
+        }
+    ]
 }
